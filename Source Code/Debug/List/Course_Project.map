@@ -1,0 +1,342 @@
+###############################################################################
+#
+# IAR ELF Linker V7.80.1.11864/W32 for ARM                06/Dec/2016  17:06:48
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        F:\Embedded System Design\Course Project\Debug\Exe\Course_Project.out
+#    Map file     =  
+#        F:\Embedded System Design\Course Project\Debug\List\Course_Project.map
+#    Command line =  
+#        "F:\Embedded System Design\Course Project\Debug\Obj\cstartup_M.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\i2c_oled.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\I2C_SSD1306Z.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\init.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\interrupt.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\main.o"
+#        "F:\Embedded System Design\Course Project\Debug\Obj\PWM_Motor.o" -o
+#        "F:\Embedded System Design\Course
+#        Project\Debug\Exe\Course_Project.out" --redirect _Printf=_PrintfFull
+#        --redirect _Scanf=_ScanfFull --map "F:\Embedded System Design\Course
+#        Project\Debug\List\Course_Project.map" --config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.5\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block CSTACK, block HEAP };
+
+  Section          Kind        Address    Size  Object
+  -------          ----        -------    ----  ------
+"A0":                                     0xbc
+  .intvec          const    0x00000000    0xbc  cstartup_M.o [1]
+                          - 0x000000bc    0xbc
+
+"P1":                                   0x2980
+  .text            ro code  0x000000bc   0xdd2  xprintffull.o [3]
+  .text            ro code  0x00000e8e     0xa  xsprout.o [3]
+  .text            ro code  0x00000e98    0x16  strchr.o [5]
+  .text            ro code  0x00000eae     0x2  cstartup_M.o [1]
+  .text            ro code  0x00000eb0    0x36  strlen.o [5]
+  .text            ro code  0x00000ee6     0x2  cstartup_M.o [1]
+  .text            ro code  0x00000ee8    0x58  memchr.o [5]
+  .text            ro code  0x00000f40    0xee  I64DivMod.o [5]
+  .text            ro code  0x0000102e     0x2  cstartup_M.o [1]
+  .text            ro code  0x00001030    0x76  ABImemcpy_unaligned.o [5]
+  .text            ro code  0x000010a6    0x44  xdnorm.o [4]
+  .text            ro code  0x000010ea     0x2  cstartup_M.o [1]
+  .text            ro code  0x000010ec    0x2e  DblCmpLe.o [4]
+  .text            ro code  0x0000111a     0x2  cstartup_M.o [1]
+  .text            ro code  0x0000111c    0x2e  DblCmpGe.o [4]
+  .text            ro code  0x0000114a     0x2  cstartup_M.o [1]
+  .text            ro code  0x0000114c   0x114  xdscale.o [4]
+  .text            ro code  0x00001260    0x58  DblToI32.o [4]
+  .text            ro code  0x000012b8    0x30  I32ToDbl.o [4]
+  .text            ro code  0x000012e8   0x180  DblSub.o [4]
+  .text            ro code  0x00001468   0x1a2  DblMul.o [4]
+  .text            ro code  0x0000160a     0x2  cstartup_M.o [1]
+  .text            ro code  0x0000160c   0x256  DblDiv.o [4]
+  .text            ro code  0x00001862     0xe  div.o [3]
+  .text            ro code  0x00001870     0x2  I64DivZer.o [5]
+  .text            ro code  0x00001872     0x2  cstartup_M.o [1]
+  .text            ro code  0x00001874    0xd4  DblAdd.o [4]
+  .rodata          const    0x00001948   0x5f0  I2C_SSD1306Z.o [1]
+  .text            ro code  0x00001f38   0x27c  init.o [1]
+  .text            ro code  0x000021b4   0x1bc  I2C_SSD1306Z.o [1]
+  .text            ro code  0x00002370   0x17c  i2c_oled.o [1]
+  .text            ro code  0x000024ec    0x16  vla_alloc.o [3]
+  .text            ro code  0x00002502     0x2  cstartup_M.o [1]
+  .text            ro code  0x00002504    0xb0  xxmemxmalloc.o [3]
+  .text            ro code  0x000025b4     0x6  abort.o [3]
+  .text            ro code  0x000025ba     0x2  cstartup_M.o [1]
+  .text            ro code  0x000025bc    0x80  xxmemxfree.o [3]
+  .text            ro code  0x0000263c    0x2c  xgetmemchunk.o [3]
+  .text            ro code  0x00002668    0x14  exit.o [6]
+  .text            ro code  0x0000267c    0xd0  main.o [1]
+  .text            ro code  0x0000274c    0xac  interrupt.o [1]
+  .text            ro code  0x000027f8     0x6  ABImemclr4.o [5]
+  .text            ro code  0x000027fe     0x2  cstartup_M.o [1]
+  .text            ro code  0x00002800    0x4e  FltToDbl.o [4]
+  .text            ro code  0x00002850    0x90  DblToFlt.o [4]
+  .text            ro code  0x000028e0    0x34  sprintf.o [3]
+  .text            ro code  0x00002914    0x32  ABImemset48.o [5]
+  .text            ro code  0x00002946    0x40  zero_init3.o [5]
+  .text            ro code  0x00002988    0x28  data_init.o [5]
+  .text            ro code  0x000029b0    0x22  fpinit_M.o [4]
+  .iar.init_table  const    0x000029d4    0x10  - Linker created -
+  .text            ro code  0x000029e4    0x1a  cmain.o [5]
+  .text            ro code  0x000029fe     0x4  low_level_init.o [3]
+  .text            ro code  0x00002a02     0x4  exit.o [3]
+  .text            ro code  0x00002a08     0xa  cexit.o [5]
+  .rodata          const    0x00002a14    0x10  interrupt.o [1]
+  .text            ro code  0x00002a24    0x10  cstartup_M.o [1]
+  .rodata          const    0x00002a34     0x8  main.o [1]
+  .rodata          const    0x00002a3c     0x0  zero_init3.o [5]
+                          - 0x00002a3c  0x2980
+
+"P2", part 1 of 2:                        0x10
+  .bss             zero     0x20000000     0x8  xxmemxmalloc.o [3]
+  .bss             zero     0x20000008     0x4  interrupt.o [1]
+  .bss             zero     0x2000000c     0x4  xgetmemchunk.o [3]
+                          - 0x20000010    0x10
+
+"P2", part 2 of 2:                      0x3000
+  CSTACK                    0x20000010  0x1000  <Block>
+    CSTACK         uninit   0x20000010  0x1000  <Block tail>
+  HEAP                      0x20001010  0x2000  <Block>
+    HEAP           uninit   0x20001010  0x2000  <Block tail>
+                          - 0x20003010  0x3000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x10:
+          0x20000000  0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+F:\Embedded System Design\Course Project\Debug\Obj: [1]
+    I2C_SSD1306Z.o             444    1 520
+    cstartup_M.o                38      188
+    i2c_oled.o                 380
+    init.o                     636
+    interrupt.o                172       16        4
+    main.o                     208        8
+    ------------------------------------------------
+    Total:                   1 878    1 732        4
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                      6
+    div.o                       14
+    exit.o                       4
+    low_level_init.o             4
+    sprintf.o                   52
+    vla_alloc.o                 22
+    xgetmemchunk.o              44                 4
+    xprintffull.o            3 538
+    xsprout.o                   10
+    xxmemxfree.o               128
+    xxmemxmalloc.o             176                 8
+    ------------------------------------------------
+    Total:                   3 998                12
+
+m7M_tls.a: [4]
+    DblAdd.o                   212
+    DblCmpGe.o                  46
+    DblCmpLe.o                  46
+    DblDiv.o                   598
+    DblMul.o                   418
+    DblSub.o                   384
+    DblToFlt.o                 144
+    DblToI32.o                  88
+    FltToDbl.o                  78
+    I32ToDbl.o                  48
+    fpinit_M.o                  34
+    xdnorm.o                    68
+    xdscale.o                  276
+    ------------------------------------------------
+    Total:                   2 440
+
+rt7M_tl.a: [5]
+    ABImemclr4.o                 6
+    ABImemcpy_unaligned.o      118
+    ABImemset48.o               50
+    I64DivMod.o                238
+    I64DivZer.o                  2
+    cexit.o                     10
+    cmain.o                     26
+    data_init.o                 40
+    memchr.o                    88
+    strchr.o                    22
+    strlen.o                    54
+    zero_init3.o                64
+    ------------------------------------------------
+    Total:                     718
+
+shb_l.a: [6]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                         6        4
+    Linker created                       16   12 288
+----------------------------------------------------
+    Grand Total:             9 060    1 752   12 304
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x000029d4          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x000029e4          --   Gb  - Linker created -
+?main                   0x000029e5         Code  Gb  cmain.o [5]
+ADC0_Handler            0x0000274d   0xac  Code  Gb  interrupt.o [1]
+BusFault_Handler        0x000010eb    0x2  Code  Wk  cstartup_M.o [1]
+CSTACK$$Base            0x20000010          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001010          --   Gb  - Linker created -
+DebugMon_Handler        0x0000160b    0x2  Code  Wk  cstartup_M.o [1]
+Font8x16                0x00001948  0x5f0  Data  Gb  I2C_SSD1306Z.o [1]
+GPIOF_Handler           0x000027ff    0x2  Code  Wk  cstartup_M.o [1]
+HEAP$$Base              0x20001010          --   Gb  - Linker created -
+HEAP$$Limit             0x20003010          --   Gb  - Linker created -
+HardFault_Handler       0x00000ee7    0x2  Code  Wk  cstartup_M.o [1]
+IR_sensor               0x000020fd   0x26  Code  Gb  init.o [1]
+Init_LCD                0x00002205   0xac  Code  Gb  I2C_SSD1306Z.o [1]
+LoadInt                 0x00000663   0x6e  Code  Lc  xprintffull.o [3]
+MemManage_Handler       0x0000102f    0x2  Code  Wk  cstartup_M.o [1]
+NMI_Handler             0x00000eaf    0x2  Code  Wk  cstartup_M.o [1]
+PWM0_Init               0x0000204d   0xb0  Code  Gb  init.o [1]
+PendSV_Handler          0x00001873    0x2  Code  Wk  cstartup_M.o [1]
+Region$$Table$$Base     0x000029d4          --   Gb  - Linker created -
+Region$$Table$$Limit    0x000029e4          --   Gb  - Linker created -
+SVC_Handler             0x0000114b    0x2  Code  Wk  cstartup_M.o [1]
+SysTick_Handler         0x00002503    0x2  Code  Wk  cstartup_M.o [1]
+TimerA_Handler          0x000025bb    0x2  Code  Wk  cstartup_M.o [1]
+UsageFault_Handler      0x0000111b    0x2  Code  Wk  cstartup_M.o [1]
+_GenldFull              0x00000bdd  0x26a  Code  Lc  xprintffull.o [3]
+_LdtobFull              0x000007dd  0x3fa  Code  Lc  xprintffull.o [3]
+_LitobFull              0x000006d1  0x10a  Code  Lc  xprintffull.o [3]
+_PrintfFull             0x000000bd  0x5a0  Code  Gb  xprintffull.o [3]
+_PutcharsFull           0x00000e47   0x2e  Code  Lc  xprintffull.o [3]
+_SProut                 0x00000e8f    0xa  Code  Gb  xsprout.o [3]
+__aeabi_cdcmple         0x000010ed         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x0000111d         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2f             0x00002851         Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x00001261         Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x0000128d         Code  Gb  DblToI32.o [4]
+__aeabi_ddiv            0x0000160d         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x00001469         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x000012e9         Code  Gb  DblSub.o [4]
+__aeabi_f2d             0x00002801         Code  Gb  FltToDbl.o [4]
+__aeabi_i2d             0x000012b9         Code  Gb  I32ToDbl.o [4]
+__aeabi_ldiv0           0x00001871         Code  Gb  I64DivZer.o [5]
+__aeabi_memclr4         0x000027f9         Code  Gb  ABImemclr4.o [5]
+__aeabi_ui2d            0x000012cd         Code  Gb  I32ToDbl.o [4]
+__aeabi_uldivmod        0x00000f41         Code  Gb  I64DivMod.o [5]
+__cmain                 0x000029e5         Code  Gb  cmain.o [5]
+__data_Aldata           0x20000000    0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_GetMemChunk      0x0000263d   0x2c  Code  Gb  xgetmemchunk.o [3]
+__data_GetMemChunk::start
+                        0x2000000c    0x4  Data  Lc  xgetmemchunk.o [3]
+__exit                  0x00002669   0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x000010a7   0x44  Code  Gb  xdnorm.o [4]
+__iar_Dscale            0x0000114d  0x114  Code  Gb  xdscale.o [4]
+__iar_Memchr            0x00000ee9         Code  Gb  memchr.o [5]
+__iar_Memset4_word      0x00002915         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x00002915         Code  Gb  ABImemset48.o [5]
+__iar_Strchr            0x00000e99         Code  Gb  strchr.o [5]
+__iar_d2uiz             0x00001299         Code  Gb  DblToI32.o [4]
+__iar_dadd              0x00001875         Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x00002989   0x28  Code  Gb  data_init.o [5]
+__iar_dsub              0x000012fd         Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x0000130f         Code  Gb  DblSub.o [4]
+__iar_init_vfp          0x000029b1         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x00002a25   0x10  Code  Gb  cstartup_M.o [1]
+__iar_ui2d              0x000012d1         Code  Gb  I32ToDbl.o [4]
+__iar_unaligned___aeabi_memcpy
+                        0x00001031         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy4
+                        0x00001051         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x00001051         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_vla_alloc2        0x000024ed   0x12  Code  Gb  vla_alloc.o [3]
+__iar_vla_dealloc2      0x000024ff    0x4  Code  Gb  vla_alloc.o [3]
+__iar_zero_init3        0x00002947   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x000029ff    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0xbc  Data  Gb  cstartup_M.o [1]
+_call_main              0x000029f1         Code  Gb  cmain.o [5]
+_exit                   0x00002a09         Code  Gb  cexit.o [5]
+_main                   0x000029fb         Code  Gb  cmain.o [5]
+abort                   0x000025b5    0x6  Code  Gb  abort.o [3]
+adc_MQ3                 0x00001f5f   0xee  Code  Gb  init.o [1]
+alchole                 0x20000008    0x4  Data  Gb  interrupt.o [1]
+bcm2835_i2c_setSlaveAddress
+                        0x00002481    0xa  Code  Gb  i2c_oled.o [1]
+bcm2835_i2c_write       0x000023d9   0xa8  Code  Gb  i2c_oled.o [1]
+clear_LCD               0x000022b1   0x2e  Code  Gb  I2C_SSD1306Z.o [1]
+div                     0x00001863    0xe  Code  Gb  div.o [3]
+exit                    0x00002a03    0x4  Code  Gb  exit.o [3]
+free                    0x000025bd   0x7a  Code  Gb  xxmemxfree.o [3]
+i2c_write_data_block    0x00002371   0x68  Code  Gb  i2c_oled.o [1]
+init_i2c                0x0000248b   0x34  Code  Gb  i2c_oled.o [1]
+lcdSetAddr              0x000021dd   0x28  Code  Gb  I2C_SSD1306Z.o [1]
+lcdWriteCommand         0x000021b5   0x14  Code  Gb  I2C_SSD1306Z.o [1]
+lcdWriteData            0x000021c9   0x14  Code  Gb  I2C_SSD1306Z.o [1]
+main                    0x0000267d   0xd0  Code  Gb  main.o [1]
+malloc                  0x00002505   0xac  Code  Gb  xxmemxmalloc.o [3]
+memchr                  0x00000ee9         Code  Gb  memchr.o [5]
+print_C                 0x000022df   0x62  Code  Gb  I2C_SSD1306Z.o [1]
+print_Line              0x00002341   0x2a  Code  Gb  I2C_SSD1306Z.o [1]
+sprintf                 0x000028e1   0x34  Code  Gb  sprintf.o [3]
+strchr                  0x00000e99         Code  Gb  strchr.o [5]
+strlen                  0x00000eb1         Code  Gb  strlen.o [5]
+timer_ADC               0x00001f39   0x26  Code  Gb  init.o [1]
+
+
+[1] = F:\Embedded System Design\Course Project\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+   9 060 bytes of readonly  code memory
+   1 752 bytes of readonly  data memory
+  12 304 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
